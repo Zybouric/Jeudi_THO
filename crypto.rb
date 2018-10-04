@@ -30,10 +30,25 @@ def min_value
 end	
 
 def coininclude
-	
-	
+	nbnamewithcoin = @name_crypto.grep(/coin/i)
+	puts nbnamewithcoin.count
+end
+
+def infcoin
+	@infco = @coin.delete_if { |k,v| v > 6000}
+	puts @infco
+	puts @infco.count
+end
+
+def maxinfco
+	maxinfco = @infco.max_by { |k,v| v}
+	puts "la valeur la plus forte est " + maxinfco.to_s
+end	
 str_flot
 crypto_init
 max_value
 min_value
+coininclude
+infcoin
+maxinfco
 
